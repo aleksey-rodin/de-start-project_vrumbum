@@ -6,9 +6,9 @@ select
 from car_shop.orders o
 inner join car_shop.persons p
   using (person_id)
-inner join car_shop.brands b
-  using (brand_id)
 inner join car_shop.models m
   using (model_id)
+inner join car_shop.brands b
+  on b.brand_id = m.brand_id
 group by p.first_name, p.last_name
 ;
